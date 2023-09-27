@@ -109,18 +109,21 @@ public class Village {
 		}
 		return null;
 		}
-	private void afficherMarche() {
+	public String afficherMarche() {
 		int nbEtalVide =0;
+		StringBuilder chaine = new StringBuilder();
 		for(int i=0; i<etals.length ;i++) {
 			if (etals[i].isEtalOccupe()) {
-				System.out.println(etals[i].afficherEtal());
+				chaine.append(etals[i].afficherEtal() +"\n");
 				
 			}
 			else {
 				nbEtalVide ++;
 		   }
-		System.out.println("Il reste "+nbEtalVide +" étals non utilisés dans le marché.");
+			
 		}
+		chaine.append("Il reste "+nbEtalVide +" étals non utilisés dans le marché.");
+		return chaine.toString();
 	}
 	
 	}
@@ -156,4 +159,20 @@ public class Village {
 		
 		return chaine.toString();
 	}
+	
+	public String partirVendeur(Gaulois vendeur) {
+		StringBuilder chaine = new StringBuilder();
+		return rechercherEtal(vendeur).libererEtal();
+		
+
+	}
+	public String afficherMarche() {
+		return marche.afficherMarche();
+	}
+	
+	
+	
+	
+	
+	
 }
