@@ -12,7 +12,7 @@ public class Personnage {
 	}
 
 	public int getForce() {
-		print("ouafs")
+		print("omiaou")
 		return force;
 	}
 
