@@ -8,7 +8,12 @@ import villagegaulois.Village;
 public class ScenarioCasDegrade {
 
 	public static void main(String[] args) {
-		try{
+		try{Etal etal = new Etal();
+		etal.libererEtal();
+		System.out.println("Fin du test 1");
+		Druide druide = new Druide("Panoramix", 2, 5, 10);
+		etal.acheterProduit(4, druide);
+		System.out.println("Fin du test 2");
 		Village village= new Village("QuoicouVille",7,3);
 		village.afficherVillageois();
 		
@@ -16,7 +21,7 @@ public class ScenarioCasDegrade {
 		
 		
 		catch(VillageSansChefException e) {
-			System.out.println(e);
+			System.out.println("yo");
 		}
 		catch(IllegalArgumentException e) {
 			System.out.println("La quantité doit être supérieur ou égale a 1");
